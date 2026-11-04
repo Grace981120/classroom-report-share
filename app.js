@@ -15,7 +15,7 @@ import {attitudeData} from './attitude-data.js';
 import {initAttitude} from './attitude.js?v=20261102-language-evaluation';
 import {mountOverviewOutline} from './overview-outline.js';
 import {mountOverviewIteration} from './overview-iteration.js?v=20261102-media-order';
-import {mountAgentIteration} from './agent-iteration.js?v=20261103-icons';
+import {mountAgentIteration} from './agent-iteration.js?v=20261104-agent-icons';
 import {mountReportScaleConfig} from './report-scale-config.js?v=20261102-release';
 import {mountScaleEvaluationV8} from './scale-evaluation-v8.js?v=20261028-ai-all1';
 import {mountOverviewRecordingMerge} from './overview-recording-merge.js?v=20261102-anomaly2';
