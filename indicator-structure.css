@@ -1,0 +1,36 @@
+#attitude-expressions .investment-observation{padding:0;border:0}
+#attitude-expressions .expression-chart{max-width:560px;margin:0 auto}
+#method-language .indicator-pitch-section{margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+#method-language .indicator-pitch-section h3{font-size:14px;line-height:24px;font-weight:600;margin:0 0 12px}
+#method-language .indicator-pitch-section .indicator-pitch{max-width:none}
+#method-language .indicator-pitch-section svg{height:200px}
+#effect-state[data-structure-retired]{display:none!important}
+#attitude-investment .investment-observations{grid-template-columns:1fr}
+#attitude-investment .teacher-investment-layout{grid-template-columns:26% minmax(0,1fr);align-items:center;gap:24px}
+#attitude-investment .effect-gauge{background:transparent;border:0;font:inherit;cursor:pointer}
+#attitude-investment .effect-gauge:hover{background:#f7faff}
+#attitude-investment .effect-gauge svg{position:absolute;left:0;top:0;width:120px;height:64px}
+#attitude-investment .effect-gauge strong,#attitude-investment .effect-gauge-plot>span{text-align:center}
+#attitude-investment .teacher-investment-chart{min-width:0;overflow-x:auto}
+#attitude-investment .teacher-investment-plot{min-width:620px}
+#attitude-investment .teacher-investment-chart svg{display:block;width:100%;height:200px;overflow:visible}
+#attitude-investment .teacher-investment-chart text{font-size:11px;font-family:var(--font-chinese);fill:var(--muted)}
+#attitude-investment [data-investment-window]{cursor:pointer}
+#attitude-investment circle[data-investment-window]:hover{fill:#1d70f2}
+#attitude-investment [data-investment-window]:focus-visible{outline:2px solid #1d70f2;outline-offset:3px}
+#detail-dialog .investment-selected{background:#edf4ff}
+@media(max-width:1100px){#attitude-investment .teacher-investment-layout{grid-template-columns:1fr;gap:8px}}
+#attitude-investment .effect-gauge .teacher-investment-gauge-value{height:60px;width:120px}
+#attitude-expressions .teacher-expression-layout{grid-template-columns:32% minmax(0,1fr);gap:40px;align-items:start}
+#attitude-expressions .teacher-expression-layout h3{font-size:14px;font-weight:600;line-height:24px;margin:0 0 16px;color:var(--primary)}
+#attitude-expressions .teacher-expression-timeline h3>span{font-size:12px;line-height:20px;font-weight:400;color:var(--muted);margin-left:16px;white-space:nowrap}
+#attitude-expressions .teacher-expression-scroll{overflow-x:auto;padding:4px 2px 8px}
+#attitude-expressions .teacher-expression-tracks{min-width:540px}
+#attitude-expressions .teacher-expression-row{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:center;margin:26px 0;font-size:12px;line-height:20px;color:var(--secondary)}
+#attitude-expressions .teacher-expression-track{position:relative;height:20px;background:#f3f5f7;border-radius:4px}
+#attitude-expressions .teacher-expression-track button{position:absolute;top:0;height:20px;padding:0 4px;border:0;border-radius:4px;font-size:10px;line-height:20px;color:white;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+#attitude-expressions .teacher-expression-track button:hover{filter:brightness(.95)}
+#attitude-expressions .teacher-expression-track button:focus-visible{outline:2px solid #1d70f2;outline-offset:3px}
+#attitude-expressions .teacher-expression-axis{display:flex;justify-content:space-between;margin-left:54px;color:var(--muted);font-size:12px;line-height:20px}
+@media(max-width:1250px){#attitude-expressions .teacher-expression-layout{grid-template-columns:1fr;gap:28px}}
+@media(max-width:560px){#attitude-expressions .teacher-expression-timeline h3>span{display:block;margin:4px 0 0}}

@@ -1,0 +1,55 @@
+#content-depth.content-knowledge-card .ck-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:stretch}
+#content-depth.content-knowledge-card .ck-diagnosis{display:none}
+#content-depth.content-knowledge-card h3{font-size:14px;font-weight:600;line-height:24px;color:var(--primary);margin:0}
+#content-depth .ck-graph-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+#content-depth .ck-review-key{font-size:12px;line-height:20px;color:var(--muted);display:flex;align-items:center;gap:6px}
+#content-depth .ck-review-key i,#content-depth .ck-node-review i{width:6px;height:6px;background:#ff9d4d;border-radius:50%;flex:none}
+#content-depth .ck-graph,#content-depth .ck-layout,#content-depth .ck-diagnosis{min-width:0}
+#content-depth .ck-graph-scroll{overflow-x:auto;max-width:100%;min-width:0;padding:2px 0 0;overscroll-behavior-x:contain}
+#content-depth .ck-stage{min-width:800px;height:320px;position:relative}
+#content-depth .ck-stage svg{position:absolute;width:100%;height:100%;inset:0;pointer-events:none}
+#content-depth .ck-stage line{stroke:#dce5f0;stroke-width:1.5}
+#content-depth .ck-node{position:absolute;transform:translate(-50%,-50%);width:17.2%;min-height:48px;display:flex;justify-content:center;align-items:center;gap:6px;padding:8px 10px;background:#f3f8ff;border:1px solid #dce9fc;border-radius:8px;font-family:inherit;font-size:14px;line-height:22px;color:#355b88;font-weight:500;cursor:pointer}
+#content-depth .ck-node-review{background:#fff8f1;border-color:#f4ddc6;color:#8b633a}
+#content-depth .ck-node:hover{border-color:#1d70f2;background:#edf4ff}
+#content-depth .ck-relation{position:absolute;transform:translate(-50%,-50%);padding:3px 6px;border:1px solid transparent;border-radius:4px;background:#fff;font-family:inherit;font-size:12px;line-height:20px;color:var(--muted);white-space:nowrap;cursor:pointer}
+#content-depth .ck-relation:hover{border-color:#dce9fc;color:#1d70f2;background:#f5f9ff}
+#content-depth .ck-diagnosis{padding-left:24px;border-left:1px solid #edf0f5}
+#content-depth .ck-diagnosis>h3{margin-bottom:10px}
+#content-depth .ck-check{display:flex;flex-direction:column;gap:3px;text-align:left;width:100%;padding:12px 8px;border:0;border-bottom:1px solid #edf0f5;background:transparent;border-radius:4px;font-family:inherit;cursor:pointer}
+#content-depth .ck-check:last-child{border-bottom:0}
+#content-depth .ck-check>span{font-size:12px;line-height:20px;color:var(--muted)}
+#content-depth .ck-check>strong{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;line-height:22px;color:var(--secondary)}
+#content-depth .ck-check strong i{width:5px;height:5px;border-radius:50%;background:#aeb9c8}
+#content-depth .ck-check .ck-tone-good i{background:#00cc7e}
+#content-depth .ck-check .ck-tone-review i{background:#ff9d4d}
+#content-depth .ck-check .ck-tone-review{color:#9b6f42}
+#content-depth .ck-check:hover{background:#f6f9fe}
+#content-depth :focus-visible{outline:2px solid #1d70f2;outline-offset:3px}
+#content-depth .ck-help{display:inline-block;position:relative;margin-left:8px;vertical-align:middle;font-size:12px;line-height:20px;font-weight:400}
+#content-depth .ck-help>button{border:1px solid var(--supplementary);border-radius:50%;padding:0;width:16px;height:16px;color:var(--muted);font:11px/14px sans-serif;background:transparent;cursor:pointer}
+#content-depth .ck-help>span{display:none;position:absolute;top:24px;left:0;width:300px;max-width:70vw;padding:12px 14px;line-height:22px;background:white;border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 16px #24324718;color:var(--secondary);z-index:5}
+#content-depth .ck-help:hover>span,#content-depth .ck-help:focus-within>span,#content-depth .ck-help.is-open>span{display:block}
+#detail-dialog.ck-dialog .dialog-head{position:sticky;top:0;background:white;z-index:2}
+#detail-dialog .ck-verdict{margin:0 0 12px;padding:12px 16px;background:#f3f8ff;border-radius:8px;font-size:14px;line-height:24px;color:#42566e}
+#detail-dialog .ck-basis{margin:0 0 20px;font-size:13px;line-height:24px;color:var(--secondary)}
+#detail-dialog .ck-record{padding:18px 0;border-top:1px solid var(--border)}
+#detail-dialog .ck-record-meta{display:flex;gap:12px;font-size:12px;line-height:20px;color:var(--muted);margin-bottom:10px;flex-wrap:wrap}
+#detail-dialog .ck-record blockquote{border-left:3px solid #1d70f2;padding-left:14px;margin:0;font-size:14px;line-height:26px;color:var(--primary)}
+#detail-dialog .ck-record details{font-size:12px;line-height:22px;color:var(--muted);margin-top:12px}
+#detail-dialog .ck-record summary{cursor:pointer;width:fit-content}
+#detail-dialog .ck-record details p{padding:10px 12px;margin:8px 0 0;background:#f8fafc;border-radius:6px;font-size:13px;line-height:24px}
+@media(max-width:1250px){#content-depth.content-knowledge-card .ck-layout{grid-template-columns:1fr;gap:20px}#content-depth .ck-diagnosis{padding:0;border:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 20px}#content-depth .ck-diagnosis>h3{grid-column:1/-1;margin-bottom:0}}
+@media(max-width:600px){#content-depth .ck-diagnosis{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}#content-depth .ck-check{padding:10px 4px}#content-depth .ck-help>span{left:auto;right:0}#content-depth .ck-graph-heading{gap:8px}}
+
+#content-depth .ck-summary{display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;min-width:0}
+#content-depth .ck-summary-card{display:flex;flex-direction:column;justify-content:center;width:100%;text-align:left;border:1px solid #e6edf6;border-radius:8px;padding:20px;background:#f8faff;font-family:inherit;cursor:pointer;color:var(--primary)}
+#content-depth .ck-summary-card>span{display:block;font-size:14px;line-height:24px;font-weight:500;color:var(--muted);margin-bottom:10px}
+#content-depth .ck-summary-card>strong{display:block;font-size:16px;line-height:28px;font-weight:500;color:var(--primary)}
+#content-depth .ck-summary-card>p{font-size:13px;line-height:24px;color:var(--secondary);margin:10px 0}
+#content-depth .ck-summary-card>small{font-size:12px;line-height:20px;color:var(--muted)}
+#content-depth .ck-summary-card:hover{border-color:#9fc3fa;background:#f3f8ff}
+@media(max-width:1250px){#content-depth .ck-summary{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:1fr}}
+@media(max-width:600px){#content-depth .ck-summary-card{padding:14px 12px}#content-depth .ck-summary-card>strong{font-size:14px}}
+
+#content-depth.content-knowledge-card .ck-summary{display:none}

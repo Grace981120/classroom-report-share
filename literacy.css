@@ -1,0 +1,10 @@
+#literacy{padding-top:21px}
+.literacy-card-summary{font-size:14px;line-height:24px;color:var(--primary);margin-bottom:8px}
+#literacy .content-detail-card{scroll-margin-top:90px}
+@media(max-width:560px){
+  .literacy-card-summary{font-size:13px;line-height:23px}
+  #literacy footer{align-items:flex-start;gap:12px}
+  #literacy footer>a{white-space:nowrap;font-size:11px}
+  #literacy footer>span{max-width:70%}
+}
+@media print{#literacy{padding-top:0}}

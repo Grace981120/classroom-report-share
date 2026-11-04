@@ -1,0 +1,135 @@
+/* Report overview 1.0: reuse the recording page, overview cards and both existing right panels. */
+body.overview-recording-merge.agent-open{padding-right:400px}
+body.overview-recording-merge:not(.supervision-open){padding-right:88px}
+body.overview-recording-merge.agent-open:not(.supervision-open){padding-right:488px}
+body.overview-recording-merge.supervision-open{padding-right:440px}
+body.overview-recording-merge.supervision-open.agent-open{padding-right:860px}
+body.overview-recording-merge.scale-v8-open,
+body.overview-recording-merge.scale-agent-coexist{padding-right:0}
+body.overview-recording-merge.agent-open>main#recording,
+body.overview-recording-merge>main#recording{width:calc(100% - 64px);max-width:none;margin:24px 32px;padding-top:0}
+body.overview-recording-merge #recording .recording-layout{display:block;height:auto;min-height:calc(100dvh - 112px)}
+body.overview-recording-merge #recording .recording-main{width:100%;height:calc(100dvh - 112px);overflow:auto;background:#fff}
+body.overview-recording-merge>.recording-sidebar{position:fixed;right:0;top:0;bottom:0;width:440px;height:auto;min-height:0;z-index:28;border-left:1px solid #e0e8f3;background:#fff;display:flex;flex-direction:column;overflow:hidden}
+body.overview-recording-merge.agent-open>.recording-sidebar{right:400px;width:460px}
+body.overview-recording-merge>.recording-sidebar[hidden]{display:none!important}
+body.overview-recording-merge>.recording-sidebar .recording-collapse img{transition:transform .15s ease}
+body.overview-recording-merge.supervision-open>.recording-sidebar .recording-collapse img{transform:scaleX(-1)}
+body.overview-recording-merge #recording .recording-player:not(:fullscreen){min-height:0}
+body.overview-recording-merge #merged-overview{padding:32px 24px 32px}
+body.overview-recording-merge #merged-overview>.hero{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(320px,1fr);gap:24px;align-items:stretch}
+body.overview-recording-merge #merged-overview .radar-card{margin-top:0;min-height:0}
+body.overview-recording-merge #merged-overview .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body.overview-recording-merge #merged-overview .summary-item{min-height:130px}
+body.overview-recording-merge #merged-overview .overview-v2-highlight{background:#f4fbf7;border-color:#d4eade}
+body.overview-recording-merge #merged-overview .overview-v2-problem{background:#fff5f5;border-color:#f0d4d4}
+body.overview-recording-merge #agent-panel{right:0;top:0;bottom:0;width:400px;border-left:1px solid #e0e8f3;border-radius:0;overflow:hidden;box-shadow:none;z-index:29}
+body.overview-recording-merge #scale-v8-panel{right:20px;top:88px;bottom:24px;width:440px;border:1px solid #e0e8f3;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #24324720}
+body.overview-recording-merge.scale-agent-coexist #scale-v8-panel{right:438px;width:420px;box-shadow:0 8px 28px #24324720}
+body.overview-recording-merge #agent-reopen{right:24px;z-index:31}
+body.overview-recording-merge:not(.supervision-open) #agent-reopen{right:112px}
+body.overview-recording-merge.supervision-open #agent-reopen{right:464px}
+body.overview-recording-merge #scale-v8-entry,
+body.overview-recording-merge #scale-v8-panel{display:none!important}
+.supervision-reopen{position:fixed;right:170px;bottom:24px;z-index:31;height:50px;background:#fff;border:1px solid #dce8fb;border-radius:28px;padding:8px 16px 8px 10px;color:#2563c9;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px #11263f0d;font-family:'PingFang SC',sans-serif}
+body.overview-recording-merge.agent-open .supervision-reopen{right:424px}
+.supervision-reopen[hidden]{display:none}
+.supervision-reopen-icon{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#e8f1ff;font-size:18px}
+.supervision-reopen>span:last-child{display:flex;flex-direction:column;align-items:flex-start;font-size:14px;line-height:18px}
+.supervision-reopen small{font-size:10px;line-height:13px;color:#7f848a}
+.supervision-rail{position:fixed;right:0;top:0;bottom:0;width:88px;z-index:31;display:flex;flex-direction:column;background:#fff;border-left:1px solid #e0e8f3;font-family:'PingFang SC',sans-serif}
+.supervision-rail[hidden]{display:none!important}
+body.overview-recording-merge.agent-open .supervision-rail{right:400px}
+.supervision-rail button{border:0;background:#fff;color:#252d38;cursor:pointer;font-family:inherit}
+.supervision-rail-toggle{height:72px;flex:none;display:grid;place-items:center;border-bottom:1px solid #e0e8f3!important;color:#7f8790!important}
+.supervision-rail-items{display:flex;flex-direction:column;gap:0;padding-top:16px}
+.supervision-rail-items button{min-height:92px;padding:12px 4px;font-size:16px;line-height:26px;text-align:center}
+.supervision-rail-items button:hover,.supervision-rail-toggle:hover{background:#f3f7ff}
+.supervision-rail-items button.is-active{color:#1d70f2;font-weight:600}
+.supervision-rail button:focus-visible{outline:2px solid #1d70f2;outline-offset:-4px}
+body.overview-recording-merge>.recording-sidebar #recording-evaluation[data-scale-version="8.0"] .recording-form-scroll{max-height:none}
+body.overview-recording-merge>.recording-sidebar #recording-evaluation,
+body.overview-recording-merge>.recording-sidebar #recording-evaluation .scale-v8-form{height:100%;min-height:0}
+
+/* The viewport remains wide while two drawers narrow the report column, so adapt by drawer state. */
+@media(min-width:1101px){
+  body.overview-recording-merge.supervision-open.agent-open>.topbar nav{gap:12px 22px;flex-wrap:wrap}
+  body.overview-recording-merge.supervision-open.agent-open>main:not(#recording){width:calc(100% - 48px);margin-left:24px;margin-right:24px}
+  body.overview-recording-merge.supervision-open.agent-open .section{padding-left:24px;padding-right:24px}
+  body.overview-recording-merge.supervision-open.agent-open .basic-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  body.overview-recording-merge.supervision-open.agent-open .basic-stat{min-width:0;padding-left:8px;padding-right:8px}
+  body.overview-recording-merge.supervision-open.agent-open .basic-stat strong{white-space:normal}
+  body.overview-recording-merge.supervision-open.agent-open .method-language-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  body.overview-recording-merge.supervision-open.agent-open .method-question-grid,
+  body.overview-recording-merge.supervision-open.agent-open .method-interaction-grid,
+  body.overview-recording-merge.supervision-open.agent-open .method-homework-grid,
+  body.overview-recording-merge.supervision-open.agent-open .content-feature-grid,
+  body.overview-recording-merge.supervision-open.agent-open .content-practice-grid{grid-template-columns:1fr;gap:20px}
+  body.overview-recording-merge.supervision-open.agent-open .method-behavior-layout,
+  body.overview-recording-merge.supervision-open.agent-open .effect-participation-layout,
+  body.overview-recording-merge.supervision-open.agent-open .effect-split,
+  body.overview-recording-merge.supervision-open.agent-open .posture-layout,
+  body.overview-recording-merge.supervision-open.agent-open .patrol-layout{grid-template-columns:1fr;gap:20px}
+  body.overview-recording-merge.supervision-open.agent-open .effect-gauge-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral{grid-template-columns:90px 32px minmax(0,1fr);row-gap:12px}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-map-root{grid-column:1;grid-row:1 / 3}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-map-left{grid-column:3;grid-row:1}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-map-right{grid-column:3;grid-row:2}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-connectors{grid-column:2;grid-row:1 / 3;transform:none}
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-connectors img,
+  body.overview-recording-merge.supervision-open.agent-open .content-map-bilateral .content-connectors.is-left{display:none}
+  body.overview-recording-merge.supervision-open.agent-open .method-timeline-scroll,
+  body.overview-recording-merge.supervision-open.agent-open .effect-chart-scroll{overflow-x:auto}
+  body.overview-recording-merge.supervision-open.agent-open #merged-overview>.hero{grid-template-columns:1fr}
+  body.overview-recording-merge.supervision-open.agent-open #merged-overview .radar-card{flex-direction:row;gap:24px;padding:18px}
+  body.overview-recording-merge.supervision-open.agent-open #merged-overview .radar-card #radar{max-width:300px}
+  body.overview-recording-merge.supervision-open.agent-open #merged-overview .radar-card svg{height:240px}
+  body.overview-recording-merge.supervision-open.agent-open #merged-overview .radar-card .legend{flex-direction:column}
+}
+
+@media(max-width:1450px){
+  body.overview-recording-merge.supervision-open{padding-right:400px}
+  body.overview-recording-merge.supervision-open.agent-open{padding-right:760px}
+  body.overview-recording-merge.agent-open{padding-right:360px}
+  body.overview-recording-merge.agent-open:not(.supervision-open){padding-right:448px}
+  body.overview-recording-merge>.recording-sidebar{width:400px}
+  body.overview-recording-merge.agent-open>.recording-sidebar{right:360px;width:400px}
+  body.overview-recording-merge #agent-panel{width:360px}
+  body.overview-recording-merge.supervision-open #agent-reopen{right:424px}
+  body.overview-recording-merge.agent-open .supervision-reopen{right:384px}
+  body.overview-recording-merge.agent-open .supervision-rail{right:360px}
+}
+@media(max-width:1100px){
+  body.overview-recording-merge.agent-open,
+  body.overview-recording-merge.supervision-open,
+  body.overview-recording-merge.supervision-open.agent-open{padding-right:0}
+  body.overview-recording-merge:not(.supervision-open),
+  body.overview-recording-merge.agent-open:not(.supervision-open){padding-right:72px}
+  body.overview-recording-merge.agent-open .supervision-rail{right:0}
+  body.overview-recording-merge:not(.supervision-open) #agent-reopen{right:88px}
+  .supervision-rail{width:72px}
+  .supervision-rail-items button{font-size:14px;line-height:23px;min-height:78px}
+  body.overview-recording-merge.supervision-open #agent-reopen,
+  body.overview-recording-merge.agent-open .supervision-reopen{right:24px}
+  body.overview-recording-merge.agent-open>main#recording,
+  body.overview-recording-merge>main#recording{width:calc(100% - 32px);margin:16px}
+  body.overview-recording-merge #recording .recording-main,
+  body.overview-recording-merge.agent-open #recording .recording-main{width:100%;height:auto;overflow:visible}
+  body.overview-recording-merge>.recording-sidebar{left:16px;right:16px;top:auto;bottom:16px;width:auto;height:min(48dvh,520px)}
+  body.overview-recording-merge.agent-open>.recording-sidebar{left:16px;right:calc(50% + 8px);width:auto}
+  body.overview-recording-merge #agent-panel{left:calc(50% + 8px);right:16px;top:auto;bottom:16px;width:auto;height:min(48dvh,520px)}
+  body.overview-recording-merge #scale-v8-panel{left:auto;right:16px;top:auto;bottom:16px;width:min(440px,calc(100% - 32px));height:min(48dvh,520px)}
+  body.overview-recording-merge.scale-agent-coexist #scale-v8-panel{left:16px;right:calc(50% + 8px);width:auto}
+}
+@media(max-width:700px){
+  body.overview-recording-merge #recording .recording-main,
+  body.overview-recording-merge.agent-open #recording .recording-main{padding-bottom:calc(58dvh + 24px)}
+  body.overview-recording-merge>.recording-sidebar,
+  body.overview-recording-merge.agent-open>.recording-sidebar{left:12px;right:12px;bottom:12px;width:auto;height:56dvh}
+  body.overview-recording-merge.agent-open>.recording-sidebar{bottom:calc(28dvh + 20px);height:28dvh}
+  body.overview-recording-merge #agent-panel{left:12px;right:12px;bottom:12px;width:auto;height:56dvh}
+  body.overview-recording-merge.agent-open #agent-panel{height:28dvh}
+  body.overview-recording-merge #scale-v8-panel,
+  body.overview-recording-merge.scale-agent-coexist #scale-v8-panel{left:12px;right:12px;bottom:12px;width:auto;height:56dvh}
+  body.overview-recording-merge.scale-agent-coexist #scale-v8-panel{bottom:calc(28dvh + 20px);height:28dvh}
+}

@@ -1,0 +1,51 @@
+#literacy-ideology .lir-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,440px);gap:32px;align-items:start}
+#literacy-ideology .lir-layout h3{font-size:14px;line-height:24px;font-weight:600;margin:0 0 12px;color:var(--primary)}
+#literacy-ideology .lir-extractions,#literacy-ideology .lir-radar{min-width:0}
+#literacy-ideology .lir-radar{padding-left:24px;border-left:1px solid #edf0f5}
+.lir-record{padding:18px 0;border-top:1px solid #edf0f5}
+.lir-record-head{display:flex;align-items:start;gap:12px;justify-content:space-between}
+.lir-record h4{margin:0;font-size:14px;line-height:24px;font-weight:500;color:var(--primary)}
+.lir-categories{display:flex;flex-wrap:wrap;gap:4px;flex-shrink:0}
+.lir-categories>span{font-size:12px;line-height:22px;background:#f0f6ff;color:#4776ad;border-radius:4px;padding:0 6px}
+.lir-meta{display:flex;gap:10px;font-size:12px;line-height:20px;color:var(--muted);margin:8px 0}
+.lir-meta time{color:#1d70f2}
+.lir-record blockquote{font-size:14px;line-height:24px;color:var(--secondary);margin:0;padding:0;border:0}
+#literacy-ideology .lir-entry{position:relative;border-radius:4px}
+#literacy-ideology .lir-entry:hover{background:#f8faff}
+#literacy-ideology .lir-record-target{position:absolute;inset:0;border:0;background:transparent;border-radius:4px;cursor:pointer;width:100%}
+#literacy-ideology .lir-radar-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#literacy-ideology .lir-radar-heading h3{margin:0}
+#literacy-ideology .lir-radar-heading>span{font-size:12px;line-height:20px;color:var(--muted)}
+#literacy-ideology .lir-radar svg{display:block;width:100%;height:auto;max-height:426px;cursor:pointer;overflow:visible;border-radius:8px}
+#literacy-ideology .lir-scale{font-size:10px;fill:#8d9bb0;paint-order:stroke;stroke:#f8fbff;stroke-width:3px}
+#literacy-ideology .lir-axis{font-family:inherit;font-size:12px;fill:var(--secondary)}
+#literacy-ideology .lir-value{font-family:inherit;font-size:12px;fill:#1d70f2}
+#literacy-ideology [data-lir-observation]:hover .lir-axis{fill:#1d70f2}
+#literacy-ideology :focus-visible{outline:2px solid #1d70f2;outline-offset:3px}
+#literacy-ideology .lir-help{display:inline-block;position:relative;margin-left:8px;vertical-align:middle;font-size:12px;font-weight:400;line-height:20px}
+#literacy-ideology .lir-help>button{border:1px solid var(--supplementary);border-radius:50%;padding:0;width:16px;height:16px;color:var(--muted);font:11px/14px sans-serif;background:transparent;cursor:pointer}
+#literacy-ideology .lir-help>span{display:none;position:absolute;top:24px;left:0;width:300px;max-width:70vw;padding:12px 14px;line-height:22px;background:white;border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 16px #24324718;color:var(--secondary);z-index:5}
+#literacy-ideology .lir-help:hover>span,#literacy-ideology .lir-help:focus-within>span,#literacy-ideology .lir-help.is-open>span{display:block}
+#detail-dialog.lir-dialog .dialog-head{position:sticky;top:0;background:white;z-index:2}
+#detail-dialog.lir-dialog .lir-record{padding:20px 0}
+#detail-dialog.lir-dialog .lir-record blockquote{border-left:3px solid #1d70f2;padding-left:14px;line-height:26px}
+#detail-dialog.lir-dialog .lir-reason{font-size:13px;line-height:24px;color:var(--secondary);background:#f6f9fe;padding:12px 14px;border-radius:8px;margin:14px 0}
+#detail-dialog.lir-dialog details{font-size:12px;line-height:22px;color:var(--muted);margin-top:12px}
+#detail-dialog.lir-dialog summary{cursor:pointer;width:fit-content}
+#detail-dialog.lir-dialog details p{font-size:13px;line-height:24px;background:#f8fafc;padding:10px 12px;border-radius:6px}
+#detail-dialog.lir-dialog .lir-observation{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--border)}
+#detail-dialog.lir-dialog .lir-observation:last-child{border-bottom:0;margin-bottom:0}
+#detail-dialog.lir-dialog .lir-observation-head{display:flex;justify-content:space-between;align-items:start;gap:16px}
+#detail-dialog.lir-dialog .lir-observation-head h3{font-size:16px;line-height:26px;margin:0;font-weight:600}
+#detail-dialog.lir-dialog .lir-observation-head strong{font-size:20px;line-height:26px;color:#1d70f2;white-space:nowrap}
+#detail-dialog.lir-dialog .lir-observation-head small{font-size:12px;color:var(--muted);font-weight:400}
+#detail-dialog.lir-dialog .lir-definition{font-size:13px;line-height:24px;color:var(--muted);margin:8px 0 16px}
+@media(max-width:1150px){#literacy-ideology .lir-layout{grid-template-columns:minmax(0,1fr)}#literacy-ideology .lir-radar{padding:20px 0 0;border-left:0;border-top:1px solid #edf0f5}#literacy-ideology .lir-radar svg{max-width:460px;margin:auto}}
+@media(max-width:600px){.lir-record-head{flex-direction:column;gap:6px}#literacy-ideology .lir-help>span{left:auto;right:0}#literacy-ideology .lir-radar{padding-top:16px}#literacy-ideology .lir-axis,#literacy-ideology .lir-value{font-size:18px}#literacy-ideology .lir-scale{font-size:14px}}
+
+#detail-dialog.lir-dialog .lir-source-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#detail-dialog.lir-dialog .lir-source-links button{border:0;border-radius:4px;background:#f2f7ff;padding:5px 8px;color:#4776ad;font-size:12px;line-height:20px;font-family:inherit;cursor:pointer;text-align:left}
+#detail-dialog.lir-dialog .lir-source-links button:hover{background:#e8f1ff;color:#1d70f2}
+#detail-dialog.lir-dialog .lir-record{scroll-margin-top:110px;transition:background .2s}
+#detail-dialog.lir-dialog .lir-highlight{background:#f2f7ff}
+#detail-dialog.lir-dialog :focus-visible{outline:2px solid #1d70f2;outline-offset:3px}

@@ -1,0 +1,75 @@
+/* Teaching-attitude summary: reuse the original section, evidence cards and AI strip. */
+#attitude[data-attitude-summary]:not([data-attitude-iteration="1.1"]) #attitude-posture {
+  display: none !important;
+}
+#attitude .attitude-dimension-summary {
+  margin-top: 0;
+}
+#attitude .attitude-dimension-summary .section-heading {
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+#attitude .attitude-dimension-summary .section-heading::before {
+  display: none;
+}
+#attitude .attitude-dimension-summary .section-heading h2 {
+  font-size: 26px;
+  line-height: 36px;
+  font-weight: 700;
+}
+#attitude .attitude-summary-score {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-left: 0;
+  white-space: nowrap;
+  color: var(--text-heading);
+}
+#attitude .attitude-summary-score strong {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+#attitude .attitude-summary-score small {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+#attitude .attitude-summary-rating {
+  font-size: 11px;
+  line-height: 20px;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+#attitude .attitude-dimension-summary .attitude-insight {
+  margin-bottom: 22px;
+}
+#attitude .attitude-dimension-summary .attitude-insight p {
+  font-size: 14px;
+  line-height: 24px;
+}
+/* The axis and event track share the same plotting width. All labels center on time. */
+#attitude-management .management-chart {
+  padding: 5px 30px 2px;
+}
+#attitude-management .management-track {
+  margin: 10px 0 0;
+}
+#attitude-management .management-axis {
+  margin: 14px 0 16px;
+}
+#attitude-management .management-axis span,
+#attitude-management .management-axis span:first-child,
+#attitude-management .management-axis span:last-child {
+  transform: translateX(-50%);
+}
+@media (max-width: 560px) {
+  #attitude .attitude-dimension-summary .section-heading { gap: 8px; }
+  #attitude .attitude-dimension-summary .section-heading h2 { font-size: 22px; line-height: 32px; }
+  #attitude .attitude-summary-score { margin-left: 0; }
+  #attitude .attitude-summary-score strong { font-size: 25px; line-height: 30px; }
+  #attitude .attitude-dimension-summary .attitude-insight p { font-size: 13px; line-height: 22px; }
+  #attitude-management .management-chart { padding: 5px 23px 2px; }
+}

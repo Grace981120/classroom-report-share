@@ -1,0 +1,132 @@
+/* Reading hierarchy: editorial refinement over the original Figma measurements. */
+:root {
+  --font-chinese: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  font-family:var(--font-chinese);
+  --primary: #243247;
+  --secondary: #536176;
+  --muted: #6d7a8c;
+  --supplementary: #8490a0;
+  --text-heading: #18263c;
+  --text-action: #2563c9;
+  color: var(--primary);
+}
+body { font-size:14px; line-height:24px; }
+p { color:var(--secondary); }
+h1,h2,h3 { color:var(--text-heading); }
+h1 { font-size:26px; line-height:36px; }
+h2 { font-size:22px; line-height:32px; font-weight:700; letter-spacing:.2px; }
+h3 { font-size:16px; line-height:26px; font-weight:600; }
+.summary h1 { background:none; color:var(--text-heading); -webkit-text-fill-color:var(--text-heading); }
+.topbar nav>* { font-size:15px; font-weight:600; color:var(--secondary); }
+.topbar nav>.active { color:var(--text-action); }
+.text-button { font-size:13px; line-height:22px; color:var(--text-action); }
+.text-button.muted { color:var(--muted); }
+.section-hint,.attitude-summary-label,.score-context { font-size:12px; line-height:20px; color:var(--supplementary); }
+.course-name { font-size:16px; color:var(--primary); }
+.course-meta { font-size:13px; line-height:22px; color:var(--muted); }
+.overall-score strong { font-size:68px; line-height:1.2; color:var(--text-heading); }
+.overall-score>div,.overall-score>div p { color:var(--muted); font-size:14px; }
+.eyebrow { color:var(--muted); font-size:13px; line-height:22px; }
+.summary-item h3 { color:var(--text-heading); font-size:18px; line-height:28px; }
+.summary-item p { font-size:14px; line-height:24px; color:var(--secondary); }
+.dimension-card h3 { font-size:16px; line-height:26px; color:var(--primary); }
+.dimension-card .dimension-score { color:var(--text-heading); font-size:38px; line-height:46px; }
+.dimension-card p { font-size:14px; line-height:24px; color:var(--secondary); }
+.tag { color:#17805b; }
+.tag.orange { color:#ae591e; }
+.suggestion-card .tag { color:var(--text-action); }
+.evidence-tabs button { font-size:14px; color:var(--secondary); }
+.evidence-tabs button span { font-size:12px; color:var(--muted); }
+.evidence-tabs button[aria-selected=true],.evidence-tabs button[aria-selected=true] span { color:var(--text-action); }
+.evidence-panel h3 { font-size:16px; line-height:26px; color:var(--primary); margin-bottom:6px; }
+.evidence-panel>p,.suggestion-card p,.suggestion-card ul,.tracking-grid p { font-size:14px; line-height:24px; color:var(--secondary); }
+.suggestion-card h3,.tracking-grid h3 { font-size:16px; line-height:26px; color:var(--primary); }
+.tracking-grid h3 span { color:var(--muted); font-size:12px; }
+.chart-title { font-size:13px; line-height:22px; font-weight:600; color:var(--secondary); }
+.chart-title span { font-size:12px; font-weight:400; color:var(--supplementary); }
+.bar-row,.bar-row b { font-size:12px; color:var(--secondary); }
+.evidence-detail-toggle,.suggestion-card .add-plan { font-size:13px; color:var(--text-action); }
+.evidence-list li { font-size:13px; line-height:22px; color:var(--secondary); }
+.legend button,.posture-legend,.management-legend button { color:var(--muted); font-size:12px; }
+.radar-card svg text { fill:var(--muted); }
+.radar-card svg .value { fill:var(--primary); font-size:15px; }
+.attitude-summary h1 { color:var(--text-heading); font-size:26px; line-height:36px; }
+.attitude-summary h1 strong { color:var(--text-heading); font-size:30px; }
+.attitude-summary p { font-size:15px; line-height:26px; color:var(--secondary); max-width:1060px; }
+.basic-stat strong { font-size:18px; font-weight:600; color:var(--primary); }
+.basic-stat strong.basic-count { font-size:28px; color:var(--text-heading); }
+.basic-stat strong.basic-none { font-size:20px; }
+.basic-stat small { color:var(--muted); font-size:13px; }
+.basic-stat>span { font-size:14px; line-height:24px; color:var(--muted); }
+.attitude-insight { font-size:14px; line-height:24px; }
+.attitude-insight p { color:#42566e; }
+.attitude-insight strong { color:#b75d23; font-weight:600; }
+#attitude h3 { font-size:14px; line-height:24px; color:var(--primary); font-weight:600; }
+.posture-timeline h3 span { color:var(--supplementary); font-size:12px; }
+.body-chart svg text { fill:var(--muted); }
+.body-chart svg text.body-axis-label { fill:var(--secondary); }
+.body-tooltip,.chart-scrubber output { color:var(--secondary); font-size:12px; line-height:20px; }
+.posture-row,.posture-duration { color:var(--secondary); font-size:12px; }
+.posture-axis,.management-axis { color:var(--muted); }
+.donut-wrap svg .donut-label { font-size:14px; fill:var(--secondary); }
+.chart-footnote { font-size:12px; line-height:20px; color:var(--muted); }
+.patrol-stats strong { font-family:CCtype,sans-serif; font-size:28px; line-height:32px; font-weight:500; color:var(--text-heading); }
+.patrol-stats small { font-family:var(--font-chinese); font-size:14px; font-weight:400; color:var(--muted); margin-left:2px; }
+.radar-card svg text,.basic-count small,.modal-score small { font-family:var(--font-chinese); }
+.patrol-stats span { font-size:14px; color:var(--muted); }
+.patrol-caption,.management-detail p { font-size:13px; line-height:22px; color:var(--secondary); }
+.management-detail strong { font-size:14px; font-weight:600; color:var(--primary); }
+dialog { color:var(--primary); }
+.dialog-head h2 { font-size:22px; line-height:32px; color:var(--text-heading); }
+.dialog-eyebrow { font-size:12px; line-height:20px; letter-spacing:0; color:var(--muted); }
+#dialog-body { font-size:14px; line-height:24px; }
+#dialog-body p { color:var(--secondary); line-height:1.75; }
+#dialog-body h3 { color:var(--primary); font-size:16px; line-height:26px; }
+.modal-score strong,.basic-dialog-value strong { color:var(--text-heading); }
+.modal-score small { color:var(--muted); font-size:14px; }
+.attitude-modal-row>span:first-child { font-size:14px; font-weight:600; color:var(--primary); }
+.attitude-modal-row p { font-size:14px; color:var(--secondary); }
+.detail-table,.attitude-record-list article,.attitude-record-list p { font-size:14px; line-height:24px; }
+.detail-table th { color:var(--muted); }
+.dialog-note { color:var(--muted); font-size:13px; line-height:22px; }
+.primary-button,.secondary-button { font-size:14px; line-height:22px; }
+.field,.field textarea { font-size:14px; line-height:24px; color:var(--secondary); }
+.field small { font-size:12px; line-height:20px; color:var(--muted); }
+.plan-heading,.plan-row { font-size:14px; line-height:24px; color:var(--primary); }
+.plan-heading span,.plan-row button { color:var(--muted); font-size:12px; }
+footer { font-size:12px; line-height:20px; color:var(--supplementary); }
+@media(max-width:1250px) {
+  .summary-item h3 { font-size:17px; }
+  .basic-stat strong { font-size:16px; }
+  .posture-axis { font-size:11px; }
+}
+@media(max-width:850px) {
+  .topbar nav>* { font-size:14px; }
+  .posture-axis { font-size:10px; }
+}
+@media(max-width:560px) {
+  h1,.attitude-summary h1 { font-size:22px; line-height:32px; }
+  .summary h1 { font-size:20px; }
+  h2,.dialog-head h2 { font-size:20px; line-height:30px; }
+  .overall-score strong { font-size:60px; }
+  .summary-heading .text-button { font-size:12px; }
+  .summary-item h3 { font-size:14px; line-height:22px; }
+  .summary-item p { font-size:12px; line-height:21px; }
+  .eyebrow { font-size:12px; }
+  .dimension-card .dimension-score { font-size:36px; }
+  .dimension-card p { font-size:13px; line-height:23px; }
+  .attitude-summary p { font-size:14px; line-height:25px; }
+  .basic-stat strong { font-size:14px; }
+  .basic-stat strong.basic-count { font-size:26px; }
+  .basic-stat>span { font-size:12px; line-height:22px; }
+  .basic-stat small { font-size:12px; }
+  .legend button { font-size:11px; }
+  .posture-axis { font-size:10px; }
+  .posture-axis span:nth-child(3n+2),.posture-axis span:nth-child(3n+3) { display:none; }
+  .posture-axis span:nth-child(3n+1),.posture-axis span:last-child { display:block; visibility:visible; }
+  .management-axis { font-size:11px; }
+  .attitude-modal-row p { font-size:13px; line-height:23px!important; }
+  .attitude-modal-row>span:first-child { font-size:13px; }
+  #attitude footer>span,footer { font-size:11px; }
+  #attitude footer a { font-size:11px; }
+}

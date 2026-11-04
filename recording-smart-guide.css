@@ -1,0 +1,48 @@
+#recording.recording-smart-guide-enabled .recording-sidebar-head{padding-left:20px;padding-right:16px;gap:10px}
+#recording.recording-smart-guide-enabled .recording-sidebar-head [role=tablist]{gap:16px}
+#recording.recording-smart-guide-enabled .recording-sidebar-head [role=tab]{font-size:14px}
+.recording-smart-guide-panel{min-height:0;flex:1;display:flex;flex-direction:column;background:#fff;color:var(--primary)}
+.recording-smart-guide-panel[hidden]{display:none}
+.recording-smart-content{min-height:0;flex:1;display:flex;flex-direction:column}
+.recording-smart-overview-wrap{min-height:0;max-height:58%;overflow:auto}
+.recording-smart-overview-wrap>.recording-smart-scroll{padding-bottom:0}
+.recording-smart-switch{display:grid;grid-template-columns:repeat(2,1fr);margin:16px 20px 0;padding:3px;background:#f3f5f7;border-radius:6px;flex-shrink:0}
+.recording-smart-switch button{height:34px;border-radius:4px;color:var(--secondary);font-size:14px;line-height:22px}
+.recording-smart-switch button[aria-selected=true]{background:#fff;color:var(--blue);font-weight:600;box-shadow:0 1px 3px #17233b14}
+.recording-smart-scroll{min-height:0;flex:1;overflow:auto;padding:20px;scrollbar-width:thin;scrollbar-color:#d7dbe0 transparent}
+.recording-smart-section-title{margin:0 0 10px;font-size:14px;line-height:22px;font-weight:600;color:var(--primary)}
+.recording-smart-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.recording-smart-tags span{padding:3px 9px;border:1px solid #d9dde2;border-radius:4px;background:#fff;color:#3d4248;font-size:12px;line-height:20px}
+.recording-smart-overview{margin:0;color:#31363b;font-size:13px;line-height:23px;text-align:justify}
+.recording-smart-divider{height:1px;margin:22px 0;background:#edf0f3}
+.recording-smart-chapter{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.recording-smart-chapter h3{margin:0;font-size:14px;line-height:22px;font-weight:600;color:var(--primary)}
+.recording-smart-chapter span{color:var(--supplementary);font-size:12px;line-height:20px;white-space:nowrap}
+.recording-smart-timeline{position:relative;margin-left:42px;padding-left:18px;border-left:1px dashed #b9c2cc}
+.recording-smart-moment{position:relative;padding:0 0 22px}
+.recording-smart-moment:last-child{padding-bottom:5px}
+.recording-smart-moment:before{content:"";position:absolute;left:-21px;top:7px;width:5px;height:5px;border:1px solid #fff;border-radius:50%;background:#aeb8c3;box-shadow:0 0 0 1px #cbd2da}
+.recording-smart-moment time{position:absolute;right:calc(100% + 30px);top:0;color:#77808a;font:12px/20px ui-monospace,SFMono-Regular,Menlo,monospace}
+.recording-smart-moment strong{display:block;margin-bottom:5px;color:#2f3439;font-size:13px;line-height:22px;font-weight:600}
+.recording-smart-moment p{margin:0;color:#656c74;font-size:12px;line-height:21px}
+.recording-smart-moment[data-smart-seek]{cursor:pointer;border-radius:6px;padding-left:4px}
+.recording-smart-moment[data-smart-seek]:hover,.recording-smart-moment[data-smart-seek]:focus-visible{background:#f5f9ff;outline:none}
+.recording-smart-map{position:relative;display:flex;flex:1;flex-direction:column;min-height:0;min-width:0;padding:16px 20px 0;overflow:hidden}
+.recording-smart-map-switch{position:absolute;z-index:2;left:50%;bottom:10px;transform:translateX(-50%);display:flex;width:max-content;padding:3px;background:#ffffffed;border:1px solid #e3e7ec;border-radius:6px;box-shadow:0 2px 8px #17233b18}
+.recording-smart-map-switch button{height:32px;border-radius:4px;color:var(--secondary);font-size:13px}
+.recording-smart-map-switch button[aria-selected=true]{background:#fff;color:var(--blue);font-weight:600;box-shadow:0 1px 3px #17233b14}
+.recording-smart-map-frame{min-width:0;min-height:0;flex:1;overflow:auto;border:1px solid #edf0f3;border-radius:8px;background:#fff}
+.recording-smart-map img{display:block;width:100%;height:auto;background:#fff}
+.recording-smart-map-zoom{display:block;min-width:0;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
+.recording-smart-map-zoom:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.recording-smart-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:64px 32px 32px;background:#fff}
+.recording-smart-lightbox[hidden]{display:none}
+.recording-smart-lightbox img{max-width:92vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:8px;box-shadow:0 12px 40px #0005}
+.recording-smart-lightbox-close{position:absolute;top:18px;right:24px;width:36px;height:36px;border:0;border-radius:50%;background:#f2f4f7;color:#17233b;font-size:26px;line-height:32px;cursor:pointer}
+.recording-smart-lightbox-switch{position:absolute;top:18px;left:50%;transform:translateX(-50%);display:flex;gap:4px;padding:3px;background:#f3f5f7;border-radius:6px}
+.recording-smart-lightbox-switch button{height:32px;padding:0 16px;border:0;border-radius:4px;background:transparent;color:var(--secondary);font-size:13px;cursor:pointer}
+.recording-smart-lightbox-switch button:hover{background:#fff;color:var(--blue)}
+.recording-smart-footer{padding:12px 20px;border-top:1px solid #f0f2f4;text-align:center;color:#a6abb1;font-size:11px;line-height:18px;flex-shrink:0}
+@media(max-width:1450px){#recording.recording-smart-guide-enabled .recording-sidebar-head{padding-left:16px;padding-right:12px}#recording.recording-smart-guide-enabled .recording-sidebar-head [role=tablist]{gap:13px}#recording.recording-smart-guide-enabled .recording-sidebar-head [role=tab]{font-size:13px}}
+@media(max-width:1100px){#recording.recording-smart-guide-enabled .sidebar-collapsed .recording-sidebar-head:before{content:"量表评价 / 智能导读 / 语音转写 / PPT"}}
+@media(max-width:600px){.recording-smart-switch{margin:14px 18px 0}.recording-smart-scroll{padding:18px}.recording-smart-map{padding:14px 18px 0}}

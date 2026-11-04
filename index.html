@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f3f5f7" />
+  <title>报告总览 · 课堂评价报告</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="attitude.css" />
+  <link rel="stylesheet" href="figma-tokens.css" />
+  <link rel="stylesheet" href="typography.css" />
+  <link rel="stylesheet" href="content.css?v=20261103-card-stars" />
+  <link rel="stylesheet" href="method.css" />
+  <link rel="stylesheet" href="effect.css" />
+  <link rel="stylesheet" href="literacy.css" />
+  <link rel="stylesheet" href="chart-interactions.css" />
+  <link rel="stylesheet" href="recording.css" />
+  <link rel="stylesheet" href="recording-anomaly.css?v=20261102-anomaly2" />
+  <link rel="stylesheet" href="overview-outline.css" />
+  <link rel="stylesheet" href="overview-iteration.css" />
+  <link rel="stylesheet" href="agent-iteration.css?v=20260912-2" />
+  <link rel="stylesheet" href="scale-evaluation-v8.css?v=20261028-ai-all1" />
+  <link rel="stylesheet" href="report-version-config.css" />
+  <link rel="stylesheet" href="report-scale-config.css" />
+  <link rel="stylesheet" href="report-version-tweaks.css" />
+  <link rel="stylesheet" href="overview-recording-merge.css?v=20261028-spacing1" />
+  <link rel="stylesheet" href="overview-layout.css?v=20261101-1" />
+  <link rel="stylesheet" href="report-edit.css?v=20261102-edit-hover" />
+  <link rel="stylesheet" href="indicator-structure.css?v=20261101-3" />
+  <link rel="stylesheet" href="rubric-scoring.css?v=20261102-release" />
+  <script type="module" src="app.js?v=20261103-depth-stars"></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav aria-label="报告导航">
+      <a href="#recording" class="active" aria-current="page">报告总览</a>
+      <a href="#attitude">教学态度</a><a href="#content">教学内容</a>
+      <a href="#method">教学方法</a><a href="#literacy">教学素养</a><a href="#effect">教学效果</a>
+    </nav>
+  </header>
+  <main id="overview">
+    <section class="hero" aria-label="课程评价概况">
+      <article class="card summary">
+        <div class="summary-heading"><h1><span class="brand-orb" aria-hidden="true"><img src="assets/figma/overview-imgVector.png" alt="" width="40" height="35"><img src="assets/figma/overview-imgVector1.png" alt="" width="40" height="35"></span>课堂评价报告</h1><button class="text-button muted" data-action="scoring"><img class="info-icon" src="assets/figma/overview-imgFrame1142813968.svg" alt="" width="16" height="16"> 得分说明</button></div>
+        <h2 class="course-name">《智慧医疗》</h2>
+        <p class="course-meta">孙志慧 <span>医学信息学院</span><span>智慧医疗班（19人）</span><span>理论课</span><span>2026-07-02 13:30–16:35（第6–9节）</span></p>
+        <div class="overall-score"><strong>92.1</strong><div><span>分</span><p>整体优秀</p></div><span class="score-context">本课节综合评价</span></div>
+        <div class="summary-grid">
+          <div class="summary-item"><span class="eyebrow">本课结论</span><h3>课堂组织稳定</h3><p>教学投入较高，考勤线索待核查</p></div>
+          <button class="summary-item" data-action="focus-evidence"><span class="eyebrow">优先问题 <span class="arrow">↗</span></span><h3>深度互动不足</h3><p>提问质量与审辩任务需增强</p></button>
+          <button class="summary-item" data-action="focus-tracking"><span class="eyebrow">下次验证 <span class="arrow">↗</span></span><h3>3 个观察点</h3><p>候答时间、学生讨论、思政任务</p></button>
+        </div>
+      </article>
+      <article class="card radar-card" aria-label="五维能力雷达图">
+        <div id="radar"></div>
+        <div class="legend" aria-label="雷达图数据系列"><button class="selected" data-series="0" aria-pressed="true"><i class="dot blue"></i>本课节</button><button class="selected" data-series="1" aria-pressed="true"><i class="dot gray"></i>本课程</button><button class="selected" data-series="2" aria-pressed="true"><i class="dot purple"></i>全校课程</button></div>
+      </article>
+    </section>
+    <section class="card section" aria-labelledby="diagnosis-title">
+      <div class="section-heading"><h2 id="diagnosis-title">诊断地图</h2></div>
+      <div id="dimensions" class="dimension-grid"></div>
+    </section>
+    <section class="card section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-heading"><h2 id="evidence-title">证据链</h2><span class="section-hint">从课堂证据，理解评价结论</span></div>
+      <div class="evidence-layout"><div id="evidence-tabs" class="evidence-tabs" role="tablist" aria-label="诊断问题" aria-orientation="vertical"></div><div id="evidence-panel" class="evidence-panel" role="tabpanel" tabindex="0"></div></div>
+    </section>
+    <section class="card section" id="suggestions" aria-labelledby="suggestions-title">
+      <div class="section-heading"><h2 id="suggestions-title">改进建议</h2><span class="section-hint">让每一次评价，都成为下一次进步</span></div>
+      <div id="suggestion-grid" class="suggestion-grid"></div>
+    </section>
+    <section class="card section tracking" id="tracking" aria-labelledby="tracking-title">
+      <div class="section-heading"><h2 id="tracking-title">追踪闭环</h2><button class="text-button" data-action="record">编辑跟进记录 <span>↗</span></button></div>
+      <div class="tracking-grid">
+        <article><span class="step-number">01</span><div><h3>课前 <span>准备改进</span></h3><p id="before-copy">确认本次改进任务，准备案例与学习目标。</p></div></article>
+        <article><span class="step-number">02</span><div><h3>课中 <span>观察验证</span></h3><p>保留候答时间、学生讨论与思政任务的课堂证据。</p></div></article>
+        <article><span class="step-number">03</span><div><h3>课后 <span>复盘追踪</span></h3><p id="after-copy">记录学生高频误区，下次课对比参与度变化。</p></div></article>
+      </div>
+      <div id="tracking-plan" class="tracking-plan" hidden></div>
+    </section>
+    <footer><span><span class="status-dot"></span>DEMO · 示例数据，仅用于交互演示</span><button class="text-button muted" data-action="export">导出报告 <span>↓</span></button></footer>
+  </main>
+  <main id="recording" hidden aria-label="课堂实录"></main>
+  <main id="attitude" hidden aria-label="教学态度分析"></main>
+  <main id="effect" hidden aria-label="教学效果分析"></main>
+  <main id="method" hidden aria-label="教学方法分析"></main>
+  <main id="content" hidden aria-label="教学内容分析"></main>
+  <main id="literacy" hidden aria-label="教学素养分析"></main>
+  <dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><span class="dialog-eyebrow" id="dialog-eyebrow">评价详情</span><h2 id="dialog-title"></h2></div><button class="icon-button" data-action="close" aria-label="关闭弹窗">×</button></div><div id="dialog-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+import {teachingMultimediaVersion} from './method-multimedia-version.js';
+import {mountMultimedia181} from './method-multimedia-v181.js?v=20261102-media-order';
+const help=t=>`<button class="mm-help" aria-label="${t}" title="${t}">?</button>`;
+const labels=['视频','PPT','其他'],colors=['#1D70F2','#00CC7E','#E545D2'];
+const content=[['图文结合',9],['包含图表',4],['纯文字',5]],readability=[['文字密集',3],['字号偏小',2],['对比不足',1]];
+const rows=(items,kind)=>`<div class="mm-bars">${items.map(([label,n])=>`<button data-mm="${kind}" data-label="${label}" class="mm-row" aria-label="${label}，${n}页"><span>${label}</span><i><b style="width:${n/14*100}%"></b></i><em>${n}页</em></button>`).join('')}</div>`;
+export function mountTeachingMultimedia(anchor){
+ if(!anchor||!['1.8','1.8.1'].includes(teachingMultimediaVersion)||document.querySelector('#method-multimedia'))return;
+ const link=document.createElement('link');link.rel='stylesheet';link.href=new URL('./method-multimedia.css',import.meta.url).href;document.head.append(link);
+ const root=document.createElement('section');root.id='method-multimedia';root.className='card section';root.setAttribute('aria-labelledby','mm-title');
+ root.innerHTML=`<div class="section-heading"><h2 id="mm-title">多媒体运用</h2></div><div class="attitude-insight"><img src="assets/figma/method-behavior-img111111.svg" width="16" height="16" alt=""><p>课件以图文结合呈现内容；部分页面文字密集、字号偏小，建议精简文字并放大关键信息。讲解重合较多的部分，需结合原句判断是否有进一步解释。</p></div><div class="mm-grid"><div><h3>教学媒体运用 ${help('按可判定画面时长统计视频、PPT与其他；内嵌视频计入视频，不可判定时段不归其他。')}</h3><div class="mm-donut"><svg width="220" height="180" viewBox="0 0 220 180" aria-label="媒体时长占比"><g transform="rotate(-90 110 86)" fill="none" stroke-width="22">${[[86.394,259.181,0],[224.624,120.951,-86.394],[34.558,311.017,-311.018]].map(([a,b,c],i)=>`<circle role="button" tabindex="0" data-mm="media" data-index="${i}" aria-label="${labels[i]} ${[25,65,10][i]}%" cx="110" cy="86" r="55" stroke="${colors[i]}" stroke-dasharray="${a} ${b}" stroke-dashoffset="${c}"/>`).join('')}</g><g font-size="12" fill="#536176"><text x="170" y="33">25%</text><text x="22" y="145">65%</text><text x="46" y="24">10%</text></g></svg></div><div class="method-legend">${labels.map((l,i)=>`<button data-mm="media" data-index="${i}"><i style="background:${colors[i]}"></i>${l}</button>`).join('')}</div></div><div><h3>课件内容呈现 ${help('按去重可见页统计；页面特征可重叠，数量不直接等于质量。')} <button class="mm-count" data-mm="content">14页</button></h3>${rows(content,'content')}</div><div><h3>课件可读性 ${help('仅评估清晰可判定页面；拍摄模糊不归因为课件问题，各问题页可重叠。')}</h3>${rows(readability,'readability')}</div><div><h3>PPT依赖度 ${help('结合连续照读、补充解释、举例与问答，以及讲解和同期课件的重合证据综合判断；内容重合度不能直接作为依赖度。')}</h3><div class="mm-value"><button data-mm="dependency" aria-label="PPT依赖度68%，依据"><strong>68<small>%</small></strong></button></div></div></div>`;
+ anchor.after(root);
+ const dialog=document.createElement('dialog');dialog.className='mm-dialog';dialog.setAttribute('aria-labelledby','mm-dialog-title');root.append(dialog);let trigger;
+ const show=(title,body)=>{dialog.innerHTML=`<header><h2 id="mm-dialog-title">${title}</h2><button class="mm-close" aria-label="关闭">×</button></header><div>${body}</div>`;dialog.querySelector('.mm-close').onclick=()=>dialog.close();dialog.showModal();};
+ dialog.addEventListener('close',()=>trigger?.focus());
+ root.addEventListener('click',e=>{
+  const info=e.target.closest('.mm-help');if(info){trigger=info;show('指标说明',`<p>${info.title}</p>`);return;}
+  const b=e.target.closest('[data-mm]');if(!b)return;trigger=b;
+  if(b.dataset.mm==='media'){const i=Number(b.dataset.index);show(`${labels[i]}使用`, `<table><thead><tr><th>媒体</th><th>时长</th><th>占比</th></tr></thead><tbody>${labels.map((l,j)=>`<tr ${j===i?'class="mm-selected"':''}><td>${l}</td><td>${['6分','15分36秒','2分24秒'][j]}</td><td>${[25,65,10][j]}%</td></tr>`).join('')}</tbody></table><p>统计范围为可判定的24分钟；内嵌视频播放不重复计入PPT。</p><p>尚无可定位的原始播放片段。</p>`);return;}
+  if(b.dataset.mm==='dependency'){show('PPT依赖度', '<p>需结合连续照读、补充解释、举例和问答，以及同期课件与讲解原句综合判断。必要的术语复述不直接判为依赖。</p><p>当前缺少时间对齐的讲解原句与逐页判定依据，无法核验该数值。</p>');return;}
+  const readable=b.dataset.mm==='readability';show(readable?'课件可读性':'课件内容呈现',`<table><thead><tr><th>特征</th><th>页数</th></tr></thead><tbody>${(readable?readability:content).map(([l,n])=>`<tr ${l===b.dataset.label?'class="mm-selected"':''}><td>${l}</td><td>${n}页</td></tr>`).join('')}</tbody></table><p>尚无与这些统计对应的逐页判定记录${readable?'；拍摄模糊不能作为课件可读性问题':''}。</p><div class="mm-pages">${[[120,'MYCIN专家系统'],[360,'专家系统概念与优缺点'],[480,'贝叶斯网络与内科诊断']].map(([t,l])=>`<figure><img src="assets/recording-real/3-${t}.jpg" alt="${l}" loading="lazy"><figcaption>${l}<br>第3段 · ${String(t/60).padStart(2,'0')}:00 抽样画面</figcaption></figure>`).join('')}</div><p>以上抽样画面不代表完整课件，也未与所选特征建立判定关联。逐页停留时间与知识点对应关系暂无完整记录。</p>`);
+ });
+ root.addEventListener('keydown',e=>{if(e.target.matches('circle[data-mm]')&&['Enter',' '].includes(e.key)){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
+ if(teachingMultimediaVersion==='1.8.1')mountMultimedia181(root);
+}

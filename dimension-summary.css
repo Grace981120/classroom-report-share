@@ -1,0 +1,36 @@
+/* First-card dimension summaries reuse the established white card and KPI styling. */
+[data-dimension-summary] > .attitude-summary[hidden] { display:none !important; }
+.dimension-summary-card { margin-top: 0; }
+.dimension-summary-card .section-heading { justify-content: flex-start; gap: 12px; margin-bottom: 20px; }
+.dimension-summary-card .section-heading::before { display:none; }
+.dimension-summary-card .section-heading h2 { font-size:26px; line-height:36px; font-weight:700; }
+.dimension-summary-score { display:inline-flex; align-items:baseline; gap:4px; margin-left:0; color:var(--text-heading); white-space:nowrap; }
+.dimension-summary-score strong { font-size:30px; line-height:36px; font-weight:650; font-variant-numeric:tabular-nums; }
+.dimension-summary-score small { font-size:13px; font-weight:400; color:var(--muted); }
+.dimension-summary-card .section-heading .tag { font-size:11px; line-height:20px; padding:0 6px; border-radius:4px; }
+.dimension-summary-card .attitude-insight { margin-bottom:22px; }
+.dimension-summary-card .attitude-insight p { font-size:14px; line-height:24px; }
+.dimension-summary-grid { display:grid; gap:18px; }
+#content-summary .dimension-summary-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+#method-summary .dimension-summary-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
+#literacy-summary .dimension-summary-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+#effect-summary .dimension-summary-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
+.dimension-summary-stat { min-width:0; }
+.dimension-summary-stat strong { font-size:28px; }
+.dimension-summary-stat strong small { font-size:13px; }
+.dimension-summary-stat > span { font-size:14px; }
+.dimension-summary-stat.is-watch::after { content:''; width:4px; height:4px; position:absolute; top:12px; right:12px; border-radius:50%; background:#e9a36d; }
+@media(max-width:850px){
+  #method-summary .dimension-summary-grid,#effect-summary .dimension-summary-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:560px){
+  .dimension-summary-card .section-heading { gap:8px; }
+  .dimension-summary-card .section-heading h2 { font-size:22px; line-height:32px; }
+  .dimension-summary-score { margin-left:0; }
+  .dimension-summary-score strong { font-size:25px; line-height:30px; }
+  .dimension-summary-card .attitude-insight p { font-size:13px; line-height:22px; }
+  #content-summary .dimension-summary-grid,#method-summary .dimension-summary-grid,#literacy-summary .dimension-summary-grid,#effect-summary .dimension-summary-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .dimension-summary-stat { min-height:85px; padding:17px 4px; }
+  .dimension-summary-stat strong,.dimension-summary-stat strong.basic-count { font-size:24px; }
+  .dimension-summary-stat > span { font-size:12px; line-height:22px; }
+}

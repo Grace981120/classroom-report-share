@@ -1,0 +1,30 @@
+:root{--chart-axis-font-size:12px}
+.effect-time-axis,.method-axis,.posture-axis,.management-axis,.body-time-axis,
+.method-bar-label,.effect-bars .effect-bar-label,.bar-row>span:first-child{
+  font-family:var(--font-chinese);font-size:var(--chart-axis-font-size);line-height:20px;font-weight:400;color:var(--muted);
+}
+.body-chart-canvas{min-width:0}
+.body-chart> .body-chart-canvas>svg{display:block;width:100%;height:auto;min-height:0;overflow:visible}
+.body-time-axis{display:flex;justify-content:space-between;margin-left:3.3088%;padding-top:8px}
+.body-time-axis span{width:0;white-space:nowrap;display:flex;justify-content:center}
+.body-time-axis span:first-child{justify-content:flex-start}
+.body-time-axis span:last-child{justify-content:flex-end}
+.chart-hover-tooltip{position:fixed;z-index:20;padding:8px 12px;max-width:min(340px,calc(100vw - 16px));border:1px solid var(--border);border-radius:8px;background:#fff;box-shadow:0 4px 18px #24324718;color:var(--secondary);font:400 12px/20px var(--font-chinese);pointer-events:none;white-space:normal}
+.effect-trace:focus-visible,.body-chart-canvas>svg:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.posture-track button,.method-track>button{transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;transform-origin:center}
+.posture-track button:hover,.posture-track button:focus-visible,.method-track>button:hover,.method-track>button:focus-visible{filter:brightness(1.1);box-shadow:0 2px 8px #58719f44;z-index:2;transform:scaleY(1.5)}
+.method-timeline-scroll{padding-top:8px;padding-bottom:6px}
+.donut-wrap svg,.method-donut svg{overflow:visible}
+.donut-segment,.method-donut path{transition:d .18s ease,filter .18s ease}
+.donut-segment:hover,.donut-segment:focus-visible,.method-donut path:hover,.method-donut path:focus-visible{d:var(--donut-hover-path);filter:drop-shadow(0 2px 3px #43558522)}
+.donut-wrap svg text{pointer-events:none}
+@media(max-width:560px){
+  .body-chart-canvas{min-width:900px}
+  .body-chart> .body-chart-canvas>svg{min-width:0}
+  .body-chart svg .body-axis-label{display:block;font-size:18px}
+  .effect-bars-learning .effect-bar-label{white-space:normal;width:100%;text-align:center}
+  .effect-bars-learning button:last-child .effect-bar-label{max-width:24px}
+  .effect-bars-learning{margin-bottom:48px}
+}
+@media(prefers-reduced-motion:reduce){.donut-segment,.method-donut path,.posture-track button,.method-track>button{transition:none}}
+@media print{.chart-hover-tooltip{display:none}.body-chart-canvas{min-width:0}}

@@ -1,0 +1,6 @@
+#overview .basic-summary-label + .basic-summary-label button{background:#f0fbf5;color:#2f956a}
+#overview .basic-summary-label{position:relative;height:148px;padding-bottom:34px;overflow:hidden}
+#overview .basic-summary-label>div{max-height:54px;overflow:hidden}
+#overview .basic-tags-expanded .basic-summary-label{height:auto;min-height:148px}
+#overview .basic-tags-expanded .basic-summary-label>div{max-height:none}
+#overview .basic-tags-toggle{position:absolute;left:16px;bottom:12px;display:block;margin:0;padding:0;background:transparent!important;color:#5d78cf!important;font-size:12px}

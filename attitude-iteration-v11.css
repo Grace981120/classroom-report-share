@@ -1,0 +1,17 @@
+/* Teaching-attitude v1.1: original posture chart; separately configurable observations. */
+#attitude[data-attitude-iteration="1.1"] #attitude-body[hidden]{display:none!important}
+#attitude[data-attitude-iteration="1.1"] #attitude-posture:not([hidden]){display:block}
+#attitude[data-attitude-iteration="1.1"] #attitude-emotion[hidden],#attitude[data-attitude-iteration="1.1"] #attitude-patrol[hidden]{display:none!important}
+#attitude[data-attitude-iteration="1.1"] #attitude-emotion:not([hidden]){display:block;margin-top:32px}
+#attitude[data-attitude-iteration="1.1"] #attitude-management [data-cm-open]{display:none!important}
+#attitude[data-attitude-iteration="1.1"] #attitude-language .method-language-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+#attitude-anomaly .attitude-anomaly-chart{padding:0 4px}
+#attitude-anomaly .attitude-anomaly-row{display:grid;grid-template-columns:52px minmax(0,1fr) 38px;gap:14px;align-items:center;margin:16px 0;color:#8792a2;font-size:12px}
+#attitude-anomaly .attitude-anomaly-track{height:16px;background:#f2f4f8;border-radius:3px;position:relative;min-width:0}
+#attitude-anomaly .attitude-anomaly-event{position:absolute;top:0;transform:translateX(-50%);width:3px;height:16px;padding:0;border-radius:1px;background:#1d70f2;cursor:pointer}
+#attitude-anomaly .attitude-anomaly-event:hover,#attitude-anomaly .attitude-anomaly-event:focus-visible{width:7px;outline:2px solid #9ebcff;outline-offset:2px;z-index:1}
+#attitude-anomaly .attitude-anomaly-count{font-size:12px;color:#8792a2;text-align:right;white-space:nowrap;padding:0}
+#attitude-anomaly .attitude-anomaly-count:hover,#attitude-anomaly .attitude-anomaly-count:focus-visible{color:#1d70f2;text-decoration:underline}
+#attitude-anomaly .attitude-anomaly-axis{display:flex;justify-content:space-between;padding:0 52px 0 66px;font-size:11px;color:#a5adba;font-variant-numeric:tabular-nums}
+@media(max-width:850px){#attitude[data-attitude-iteration="1.1"] #attitude-language .method-language-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){#attitude-anomaly .attitude-anomaly-row{grid-template-columns:42px minmax(0,1fr) 28px;gap:8px;font-size:10px}#attitude-anomaly .attitude-anomaly-axis{padding:0 34px 0 50px;font-size:9px}#attitude[data-attitude-iteration="1.1"] #attitude-emotion:not([hidden]){margin-top:16px}#attitude-posture .posture-row-label{width:32px}#attitude-posture .posture-axis{padding-left:40px;padding-right:60px}#attitude-posture .posture-axis span{display:none!important}#attitude-posture .posture-axis span:nth-child(1),#attitude-posture .posture-axis span:nth-child(4),#attitude-posture .posture-axis span:nth-child(7),#attitude-posture .posture-axis span:nth-child(10),#attitude-posture .posture-axis span:last-child{display:block!important}}
