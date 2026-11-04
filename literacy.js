@@ -1,6 +1,6 @@
 import {literacyData as data} from './literacy-data.js';
 import {mountDimensionSummary} from './dimension-summary.js?v=20261019-jump5';
-import {mountLiteracyIdeology} from './literacy-ideology.js?v=20261102-release';
+import {mountLiteracyIdeology} from './literacy-ideology.js?v=20261104-fit';
 
 const escapeHTML = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const asset = name => `assets/figma/literacy-${name}.svg`;

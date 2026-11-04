@@ -4,7 +4,7 @@ import {mountOverviewLayout} from './overview-layout.js?v=20261102-methods3';
 import {mountReportEdit} from './report-edit.js?v=20261102-edit-hover';
 import {initRecording} from './recording.js?v=20261102-anomaly2';
 import {literacyData} from './literacy-data.js';
-import {initLiteracy} from './literacy.js?v=20261102-release';
+import {initLiteracy} from './literacy.js?v=20261104-fit';
 import {effectData} from './effect-data.js';
 import {initEffect} from './effect.js?v=20261019-jump5';
 import {methodData} from './method-data.js';

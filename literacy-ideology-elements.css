@@ -8,3 +8,16 @@
 #literacy-ideology .lir-layout{grid-template-columns:minmax(360px,440px) minmax(0,1fr)}
 #literacy-ideology .lir-radar{padding:0 24px 0 0;border-left:0;border-top:0;border-right:1px solid #edf0f5}
 @media(max-width:1150px){#literacy-ideology .lir-layout{grid-template-columns:minmax(0,1fr)}#literacy-ideology .lir-radar{padding:0 0 20px;border-right:0;border-bottom:1px solid #edf0f5}}
+
+/* The report can be narrow even on a wide screen when both side panels are open. */
+#literacy-ideology{container:ideology-card / inline-size}
+#literacy-ideology .lir-element-title{min-width:0;overflow-wrap:anywhere}
+#literacy-ideology .lir-element-line .content-time{flex-shrink:0}
+@container ideology-card (max-width:780px){
+  #literacy-ideology .lir-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+  #literacy-ideology .lir-radar{padding:0 0 20px;border:0;border-bottom:1px solid #edf0f5}
+  #literacy-ideology .lir-radar svg{max-width:440px;margin-inline:auto}
+}
+@container ideology-card (max-width:390px){
+  #literacy-ideology .lir-compact{flex-wrap:wrap}
+}
