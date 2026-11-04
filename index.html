@@ -5,32 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f3f5f7" />
   <title>报告总览 · 课堂评价报告</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="attitude.css" />
-  <link rel="stylesheet" href="figma-tokens.css" />
-  <link rel="stylesheet" href="typography.css" />
-  <link rel="stylesheet" href="content.css?v=20261103-card-stars" />
-  <link rel="stylesheet" href="method.css" />
-  <link rel="stylesheet" href="effect.css" />
-  <link rel="stylesheet" href="literacy.css" />
-  <link rel="stylesheet" href="chart-interactions.css" />
-  <link rel="stylesheet" href="recording.css" />
-  <link rel="stylesheet" href="recording-anomaly.css?v=20261102-anomaly2" />
-  <link rel="stylesheet" href="overview-outline.css" />
-  <link rel="stylesheet" href="overview-iteration.css" />
-  <link rel="stylesheet" href="agent-iteration.css?v=20260912-2" />
-  <link rel="stylesheet" href="scale-evaluation-v8.css?v=20261028-ai-all1" />
-  <link rel="stylesheet" href="report-version-config.css" />
-  <link rel="stylesheet" href="report-scale-config.css" />
-  <link rel="stylesheet" href="report-version-tweaks.css" />
-  <link rel="stylesheet" href="overview-recording-merge.css?v=20261028-spacing1" />
-  <link rel="stylesheet" href="overview-layout.css?v=20261101-1" />
-  <link rel="stylesheet" href="report-edit.css?v=20261102-edit-hover" />
-  <link rel="stylesheet" href="indicator-structure.css?v=20261101-3" />
-  <link rel="stylesheet" href="rubric-scoring.css?v=20261102-release" />
-  <script type="module" src="app.js?v=20261104-fit"></script>
+  <link rel="modulepreload" href="report-fcc8c02eb30e.js" />
+  <link rel="stylesheet" href="report-e8ad213a2ad8.css" />
+  <style>#report-loading{display:none}html.report-starting #report-loading{display:grid;position:fixed;inset:0;place-items:center;background:#f3f5f7;color:#516176;font:14px sans-serif;z-index:99999}html.report-starting body > :not(#report-loading){visibility:hidden}</style>
+  <script>document.documentElement.classList.add('report-starting')</script>
+  <script type="module">
+    try {
+      await import('./report-fcc8c02eb30e.js');
+      const styles = [...document.querySelectorAll('link[rel="stylesheet"]')].filter(link => !link.sheet);
+      await Promise.race([Promise.all(styles.map(link => new Promise(resolve => {
+        link.addEventListener('load', resolve, {once:true});
+        link.addEventListener('error', resolve, {once:true});
+      }))), new Promise(resolve => setTimeout(resolve, 1000))]);
+    } catch (error) {
+      document.querySelector('#report-loading').textContent = '报告加载失败，请刷新重试';
+      console.error(error);
+      throw error;
+    }
+    document.documentElement.classList.remove('report-starting');
+  </script>
 </head>
 <body>
+  <div id="report-loading" role="status">正在加载课堂评价报告…</div>
   <header class="topbar">
     <nav aria-label="报告导航">
       <a href="#recording" class="active" aria-current="page">报告总览</a>

@@ -7,7 +7,7 @@ import {recordingData as data, recordingScore, transcriptIndex, recordingTime as
 import {attendanceTrace, playerTrack} from './recording-assets.js';
 
 const asset = name => `assets/figma/recording-${name}.svg`;
-const picture = name => `assets/figma/recording-${name}.png`;
+const picture = name => `assets/figma/recording-${name}.${/^imgRectangle346777[013]$/.test(name)?'jpg':'png'}`;
 const icon = (name, size=24) => `<img src="${asset(name)}" alt="" width="${size}" height="${size}">`;
 const safe = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storageKey = recordingRealVersion==='baseline'?'teaching-recording-evaluation-v1':'teaching-recording-evaluation-medical-20240910';
