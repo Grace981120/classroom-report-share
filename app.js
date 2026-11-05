@@ -10,7 +10,7 @@ import {initEffect} from './effect.js?v=20261019-jump5';
 import {methodData} from './method-data.js';
 import {initMethod} from './method.js?v=20261102-language-evaluation';
 import {contentData} from './content-data.js';
-import {initContent} from './content.js?v=20261103-depth-stars';
+import {initContent} from './content.js?v=20261105-teacher-source';
 import {attitudeData} from './attitude-data.js';
 import {initAttitude} from './attitude.js?v=20261102-language-evaluation';
 import {mountOverviewOutline} from './overview-outline.js';

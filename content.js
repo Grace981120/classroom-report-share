@@ -1,6 +1,6 @@
 import {contentData as data} from './content-data.js?v=20261103-all-case-labels';
 import {teachingContentVersion} from './content-quality-version.js';
-import {mountTeachingGoals} from './content-goals.js?v=20261103-evidence';
+import {mountTeachingGoals} from './content-goals.js?v=20261105-teacher-source';
 import {mountContentDepth} from './content-depth.js?v=20261103-depth-stars';
 import {mountContentAccuracy} from './content-accuracy.js';
 import {mountChallengeMatch} from './content-challenges-match.js';

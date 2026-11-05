@@ -1,4 +1,4 @@
-import {mountTeachingGoalsEvidence} from './content-goals-evidence.js';
+import {mountTeachingGoalsEvidence} from './content-goals-evidence.js?v=20261105-teacher-source';
 import {mountTeachingGoalsGap} from './content-goals-gap.js?v=20261102-goals-gap';
 import {teachingGoalsVersion} from './content-goals-version.js?v=20261103-evidence';
 import {goalsData as data} from './content-goals-data.js';
