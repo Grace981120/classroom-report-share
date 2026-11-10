@@ -6,7 +6,7 @@ import {mountContentAccuracy} from './content-accuracy.js';
 import {mountChallengeMatch} from './content-challenges-match.js';
 import {mountDimensionSummary} from './dimension-summary.js?v=20261019-jump5';
 
-import {mountContentTwoProperties} from './content-two-properties.js?v=20261106-policy';
+import {mountContentTwoProperties} from './content-two-properties.js?v=20261105-two-properties-policy';
 
 const escapeHTML = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const asset = name => `assets/figma/content-${name}.svg`;

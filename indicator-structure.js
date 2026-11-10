@@ -1,4 +1,4 @@
-import {mountLanguageIntegration} from './language-integration.js?v=20261102-release';
+import {mountLanguageIntegration} from './language-integration.js?v=20261110-3';
 import {teacherInvestmentWindows as windows,teacherInvestmentSummary as summary} from './teacher-investment-data.js';
 import {indicatorStructureVersion} from './indicator-structure-version.js';
 const ai=text=>`<div class="attitude-insight"><img src="assets/figma/attitude-img111111.svg" width="16" height="16" alt=""><p>${text}</p></div>`;

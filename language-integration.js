@@ -1,9 +1,11 @@
-import {languageIntegrationVersion} from './language-integration-version.js';
+import {mountLanguageWordSummary} from './language-word-summary.js?v=20261110-3';
+import {languageIntegrationVersion} from './language-integration-version.js?v=20261110-3';
 import {languageExpressionModel} from './method-language-data.js?v=20261102-language-evaluation';
 import {recordingTranscript as transcript} from './recording-transcript-data.js';
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function mountLanguageIntegration(language,pitch,{openDialog,bindEvidence}){
  if(languageIntegrationVersion==='baseline'||language.dataset.languageIntegration)return;
+ if(languageIntegrationVersion==='2.0'&&mountLanguageWordSummary(language,pitch,{openDialog}))return;
  const grid=language.querySelector('.method-language-grid');if(!grid||!pitch)return;
  const pronunciation=grid.querySelector('[data-ml-detail="pronunciation"]'),fluency=grid.querySelector('[data-ml-detail="fluency"]');
  const pitchCard=pitch.querySelector('.pitch-stat');if(!pronunciation||!pitchCard)return;

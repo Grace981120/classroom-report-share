@@ -1,1 +1,1 @@
-export const languageIntegrationVersion='1.0';
+export const languageIntegrationVersion='2.0';

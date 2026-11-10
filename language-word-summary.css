@@ -1,0 +1,29 @@
+#method-language[data-language-integration="2.0"] .language-acoustic-summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#method-language .language-lexical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+#method-language .language-lexical-grid section{min-width:0}
+#method-language .language-lexical-grid h3{font-size:14px;line-height:24px;margin:0 0 8px}
+.language-lexical-table{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--secondary);padding:0;cursor:pointer;overflow:hidden}
+.language-lexical-table:hover{border-color:#9abdf4;background:#f8fbff}
+.language-lexical-table:focus-visible{outline:2px solid #1d70f2;outline-offset:3px}
+.language-lexical-table>span+span{border-left:1px solid var(--border)}
+.language-lexical-table>span>*{display:block;padding:6px 3px;font-size:13px;line-height:22px;overflow-wrap:anywhere}
+.language-lexical-table strong{border-top:1px solid var(--border);font-size:14px;font-weight:600;color:var(--primary)}
+.language-lexical-table small{font-size:12px;margin-left:2px;font-weight:400}
+.language-rank-list{padding-left:24px}
+.language-rank-list li{padding:5px 0;border-bottom:1px solid var(--border)}
+.language-rank-list summary{cursor:pointer}
+.language-rank-list summary strong{float:right;font-variant-numeric:tabular-nums}
+.language-rank-list blockquote{margin:4px 0 10px;color:var(--secondary)}
+@media(max-width:700px){#method-language .language-lexical-grid{grid-template-columns:1fr;gap:14px}}
+#method-language[data-language-integration="2.0"] .language-acoustic-summary{gap:24px}
+.language-trend{min-width:0}
+.language-trend h3{margin:0 0 8px;font-size:14px;line-height:24px;font-weight:600}
+.language-trend button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;width:100%;border:0;border-radius:6px;padding:0;background:none;color:var(--muted);font:inherit;text-align:left;cursor:pointer}
+.language-trend button:focus-visible{outline:2px solid #1d70f2;outline-offset:4px}
+.language-trend-labels{display:flex;flex-direction:column;justify-content:space-between;height:108px;padding:2px 0;font-size:12px;line-height:20px;white-space:nowrap}
+.language-trend-plot svg{display:block;width:100%;height:108px;overflow:visible}
+.language-trend-guide,.language-trend-line{fill:none;vector-effect:non-scaling-stroke}
+.language-trend-guide{stroke:#dce4ef;stroke-dasharray:4 3}
+.language-trend-line{stroke:#1d70f2;stroke-width:1.45;stroke-linejoin:round}
+.language-trend-axis{display:flex;justify-content:space-between;gap:3px;font-size:11px;line-height:20px;color:var(--supplementary);font-variant-numeric:tabular-nums}
+@media(max-width:600px){#method-language[data-language-integration="2.0"] .language-acoustic-summary{grid-template-columns:1fr;gap:14px}}

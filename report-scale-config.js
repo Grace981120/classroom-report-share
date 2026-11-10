@@ -94,6 +94,14 @@ export function mountReportScaleConfig({dimensions,toast,onChange}){
     }
   }
   state.twoPropertiesVersion=1;
+  // Apply this default once to every template without resetting saved choices or order elsewhere.
+  if(saved?.teacherObservationDefaultsVersion!==1){
+    const disabledByDefault=new Set(['attitude-investment','attitude-expressions']);
+    for(const config of Object.values(state.templates)){
+      config.modules['教学态度']=config.modules['教学态度'].filter(id=>!disabledByDefault.has(id));
+    }
+  }
+  state.teacherObservationDefaultsVersion=1;
   const current=()=>state.templates[state.active];
   const isBasic=id=>{const row=scalePresets[state.active]?.rows.find(row=>row.module===id||row.additionalModules?.includes(id));return row?row.basic:offline.has(id);};
   const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(state));}catch{toast?.('浏览器暂不支持保存配置');}};
