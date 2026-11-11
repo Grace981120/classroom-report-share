@@ -1,7 +1,7 @@
 import {goalsStyles} from '../../content-goals-styles.js';
 import {goalsGapStyles} from '../../content-goals-gap-styles.js';
-import {openOutlineEvidence} from '../outline-match-20261111/evidence-dialog.js?v=goals19';
-import {report,goalAlignment} from '../outline-match-20261111/data.js?v=challenges1';
+import {openOutlineEvidence} from '../outline-match-20261111/evidence-dialog.js?v=attainment1';
+import {report,goalAlignment} from '../outline-match-20261111/data.js?v=attainment1';
 
 function updateGoals(){
  const section=document.querySelector('#content-goals'),nodes=[...section?.querySelectorAll('.cg-node')??[]];
@@ -12,14 +12,18 @@ function updateGoals(){
  section.querySelector('.cg-root').textContent='目标';
  section.querySelector('.attitude-insight p').textContent=goals.evaluate_suggestions;
  const score=section.querySelector('.cg-score');
+ score.firstChild.nodeValue='达成度 ';
  score.querySelector('strong').firstChild.nodeValue=goals.overall_match_score;
- score.setAttribute('aria-label',`大纲匹配度${goals.overall_match_score}%，查看全部对照`);
+ const help=section.querySelector('.cg-help');if(help)help.setAttribute('aria-label','达成度说明');
+ const tip=section.querySelector('.cg-tip');if(tip)tip.textContent='根据现有课堂证据，判断本课对各大纲目标要求的落实程度。';
+ score.setAttribute('aria-label',`达成度${goals.overall_match_score}%，查看全部对照`);
  nodes.forEach((node,i)=>{
   const goal=goals.keypoints[i];
+  node.querySelector('.cg-match').firstChild.nodeValue='达成度 ';
   node.querySelector('.cg-match b').textContent=`${goal.match_score}%`;
   const title=goalAlignment[i].outline;
   node.firstElementChild.textContent=title;
-  node.setAttribute('aria-label',`${title}，匹配度${goal.match_score}%，查看依据`);
+  node.setAttribute('aria-label',`${title}，达成度${goal.match_score}%，查看依据`);
  });
  renderUncovered(section,goals.unmatched_keypoints);
  return true;
@@ -37,11 +41,11 @@ function renderUncovered(section,items){
   if(remaining>0){
    const details=document.createElement('details');details.className='cg-uncovered-more';
    const summary=document.createElement('summary');
-   summary.textContent=`展开其余 ${remaining} 项`;
+   summary.textContent='展开';
    details.addEventListener('toggle',()=>{if(details.open)collapse.focus({preventScroll:true});});
    extraList=document.createElement('ul');extraList.className=list.className;
    const collapse=document.createElement('button');collapse.type='button';collapse.className='cg-uncovered-collapse';
-   collapse.textContent='收起其余条目';
+   collapse.textContent='收起';
    collapse.addEventListener('click',()=>{details.open=false;summary.focus();});
    details.append(summary,extraList,collapse);gaps.append(details);
   }
@@ -59,8 +63,8 @@ function updateChallenges(){
  const model=report[1],height=model.keypoints.length*88-12;
  section.dataset.challengesContentPreview='true';
  const score=document.createElement('button');score.type='button';score.className='cg-score';
- score.innerHTML=`大纲匹配度 <strong>${model.overall_match_score}<small>%</small></strong>`;
- score.setAttribute('aria-label',`大纲匹配度${model.overall_match_score}%，查看全部对照`);
+ score.innerHTML=`达成度 <strong>${model.overall_match_score}<small>%</small></strong>`;
+ score.setAttribute('aria-label',`达成度${model.overall_match_score}%，查看全部对照`);
  const heading=section.querySelector('.section-heading');
  const legacy=heading.querySelector('.ccm-heading');
  if(legacy)legacy.replaceWith(score);else heading.append(score);
@@ -70,7 +74,7 @@ function updateChallenges(){
  tree.innerHTML=`<button type="button" class="cg-root" data-cg-all>重难点</button><div class="cg-connect"><svg viewBox="0 0 50 ${height}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="challenge-gradient"><stop stop-color="#1d70f2"/><stop offset="1" stop-color="#e3edff"/></linearGradient></defs><g fill="none" stroke="url(#challenge-gradient)" stroke-width="8">${paths}</g></svg></div><div class="cg-list"></div>`;
  model.keypoints.forEach(p=>{
   const node=document.createElement('button');node.type='button';node.className='cg-node';
-  node.innerHTML=`<span></span><span class="cg-meta"><span class="cg-category"></span><span class="cg-match">大纲匹配度 <b>${p.match_score}%</b></span></span>`;
+  node.innerHTML=`<span></span><span class="cg-meta"><span class="cg-category"></span><span class="cg-match">达成度 <b>${p.match_score}%</b></span></span>`;
   node.firstElementChild.textContent=p.title;node.querySelector('.cg-category').textContent=p.type;
   tree.querySelector('.cg-list').append(node);
  });
