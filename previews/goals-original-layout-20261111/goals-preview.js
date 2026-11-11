@@ -61,7 +61,9 @@ function updateChallenges(){
  const score=document.createElement('button');score.type='button';score.className='cg-score';
  score.innerHTML=`大纲匹配度 <strong>${model.overall_match_score}<small>%</small></strong>`;
  score.setAttribute('aria-label',`大纲匹配度${model.overall_match_score}%，查看全部对照`);
- section.querySelector('.section-heading').append(score);
+ const heading=section.querySelector('.section-heading');
+ const legacy=heading.querySelector('.ccm-heading');
+ if(legacy)legacy.replaceWith(score);else heading.append(score);
  const summary=section.querySelector('.attitude-insight p');if(summary)summary.textContent=model.evaluate_suggestions;
  const paths=model.keypoints.map((_,i)=>`<path d="M0 ${height/2} C28 ${height/2} 22 ${i*88+38} 50 ${i*88+38}"/>`).join('');
  const tree=document.createElement('div');tree.className='cg-map';
